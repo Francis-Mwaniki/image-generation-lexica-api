@@ -51,9 +51,8 @@ const get_all = async () => {
   const { data, error } = await client.from("images").select("*");
   if (data) {
     all_images.value.push(data);
-    console.log(all_images);
   } else {
-    console.log(error);
+    alert("error in retrieving");
   }
 };
 get_all();

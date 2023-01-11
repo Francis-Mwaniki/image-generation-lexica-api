@@ -167,7 +167,6 @@ const getImg = async () => {
     } else {
       let res = await data.json();
       errMsg.value = res.message;
-      console.log(res);
       setTimeout(() => {
         loading.value = false;
       }, 3000);
@@ -198,7 +197,7 @@ const downloadImage = async (src) => {
     .from("images")
     .insert({ name: query.value, img_url: src });
   if (error) {
-    console.log(error);
+    alert("Error in saving ");
   }
 };
 
