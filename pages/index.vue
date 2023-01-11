@@ -123,7 +123,7 @@
         </div>
         <div
           v-show="allPosts.length === 0"
-          class="flex justify-center mx-auto md:flex-row flex-col gap-x-2 max-w-2xl py-3 rounded my-2 ring-1 ring-red-600 items-center md:text-2xl text-lg text-white"
+          class="flex justify-center mx-auto md:flex-row flex-col gap-x-2 md:max-w-2xl max-w-lg py-3 rounded my-2 ring-1 ring-red-600 items-center md:text-2xl text-lg text-white"
         >
           <Icon name="ic:baseline-edit-note" class="w-10 h-10 text-red-100" />
           <p class="text-sm md:text-xl">{{ err }}</p>
