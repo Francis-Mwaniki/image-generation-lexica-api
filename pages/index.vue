@@ -1,10 +1,5 @@
 <template>
-  <div class="bg-slate-900 min-h-screen pb-2">
-    <Nuxt-Link to="/history" class="text-white flex justify-end items-end">
-      <span class="px-4 py-2 ring rounded bg-slate-800 m-3"
-        >Download History</span
-      ></Nuxt-Link
-    >
+  <div class="dark:bg-slate-900 bg-pink-300 min-h-screen dark:text-white text-black pb-2">
     <div
       wire:loading
       v-show="loading"
@@ -13,16 +8,21 @@
       <div
         class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"
       ></div>
-      <p class="sm:w-1/3 w-2/3 text-center text-white" v-show="errMsg">
+      <p
+        class="sm:w-1/3 w-2/3 text-center dark:text-pink-300 text-indigo-100"
+        v-show="errMsg"
+      >
         {{ errMsg }}
       </p>
-      <h2 class="text-center text-white text-xl font-semibold">Loading...</h2>
-      <p class="sm:w-1/3 w-2/3 text-center text-white">
+      <h2 class="text-center dark:text-pink-300 text-indigo-100 text-xl font-semibold">
+        Loading...
+      </h2>
+      <p class="sm:w-1/3 w-2/3 text-center dark:text-pink-300 text-indigo-100">
         This may take a few seconds, please don't close this page.
       </p>
       <ClientOnly>
         <button
-          class="outline-none ring-1 ring-indigo-600 rounded py-1 px-6 hover:bg-blue-700 gap-x-2 focus:outline-none text-white flex justify-center items-center mx-auto my-2"
+          class="outline-none ring-1 ring-pink-600 rounded py-1 px-6 text-white hover:bg-pink-700 gap-x-2 focus:outline-none dark:text-white flex justify-center items-center mx-auto my-2"
           @click="loading = false"
         >
           Cancel
@@ -38,14 +38,14 @@
         <div
           class="hero-headline flex flex-col items-center justify-center pt-24 text-center gap-y-2"
         >
-          <h1 class="font-bold text-3xl text-gray-100">
+          <h1 class="font-bold text-3xl dark:text-white text-black">
             Stunning free images & royalty free stock
           </h1>
           <div
-            class="font-base text-base text-gray-300 ring-1 ring-red-700 p-2 flex justify-center items-center mx-auto md:flex-row flex-col"
+            class="font-base text-base text-gray-300 ring-1 ring-pink-700 p-2 flex justify-center items-center mx-auto md:flex-row flex-col"
           >
-            <Icon name="ic:sharp-info" class="h-6 w-6 text-red-600" />
-            <p class="text-sm md:text-xl">
+            <Icon name="ic:sharp-info" class="h-6 w-6 text-pink-600" />
+            <p class="text-sm md:text-xl dark:text-white text-black">
               Please Note that these are AI generated images. Ask relevant prompts
             </p>
           </div>
@@ -55,25 +55,20 @@
         <div class="box pt-6">
           <div class="box-wrapper">
             <div
-              class="bg-white rounded flex items-center w-full p-3 shadow-sm border border-indigo-600 ring-1"
-              :class="loading ? 'cursor-not-allowed bg-gray-500 ring-1 ring-red-600' : ''"
+              class="bg-pink-200 rounded-full flex items-center w-full shadow-sm border border-pink-600 ring-1"
+              :class="
+                loading ? 'cursor-not-allowed bg-gray-500 ring-1 ring-pink-600' : ''
+              "
             >
               <button
-                class="outline-none bg-slate-800 focus:outline-none"
+                class="outline-none bg-pink-800 focus:outline-none rounded-full p-3"
                 :class="loading ? 'cursor-not-allowed bg-gray-500' : ''"
                 @click.once="getImg"
               >
-                <svg
-                  class="w-10 text-gray-600 h-10 p-3 rounded cursor-pointer"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
+                <Icon
+                  name="ic:sharp-search"
+                  class="w-7 h-7 text-gray-100 cursor-pointer"
+                />
               </button>
 
               <input
@@ -86,13 +81,13 @@
                 v-model="query"
                 :placeholder="loading ? 'Generating...' : 'Describe your images'"
                 id=""
-                class="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent"
+                class="w-full pl-4 text-pink-600 font-mono uppercase font-bold text-sm outline-none focus:outline-none bg-transparent"
               />
             </div>
             <ClientOnly>
               <button
                 :class="loading ? 'cursor-not-allowed bg-gray-500' : ''"
-                class="outline-none ring-1 ring-indigo-600 rounded py-1 px-6 hover:bg-blue-700 gap-x-2 focus:outline-none text-white flex justify-center items-center mx-auto my-2"
+                class="outline-none ring-1 ring-pink-600 rounded py-1 px-6 hover:text-white hover:bg-pink-900 gap-x-2 focus:outline-none dark:text-white text-black flex justify-center items-center mx-auto my-2"
                 @click="refresh"
               >
                 Refresh
@@ -102,7 +97,7 @@
           </div>
         </div>
         <div
-          class="flex justify-center mx-auto py-3 items-center text-2xl text-white px-1"
+          class="flex justify-center mx-auto py-3 items-center text-2xl dark:text-white text-black px-1"
         >
           Your search is "{{ query }}"
         </div>
@@ -111,11 +106,11 @@
             <nuxt-img fit="cover" class="w-full h-64 object-cover" :src="img.src" />
             <button
               @click="downloadImage(img.src)"
-              class="py-1 px-3 m-1 text-white cursor-pointer float-right"
+              class="py-1 px-3 m-1 dark:text-white text-black cursor-pointer float-right"
             >
               <Icon
                 :name="downloading ? 'ic:outline-circle' : 'ic:baseline-cloud-download'"
-                class="w-6 h-6 text-indigo-600 ring-2 rounded ring-fuchsia-600"
+                class="w-6 h-6 text-pink-600 ring-2 rounded ring-fuchsia-600"
                 :class="downloading ? '  animate-spin ' : ''"
               />
             </button>
@@ -123,9 +118,12 @@
         </div>
         <div
           v-show="allPosts.length === 0"
-          class="flex justify-center mx-auto md:flex-row flex-col gap-x-2 md:max-w-2xl max-w-lg py-3 rounded my-2 ring-1 ring-red-600 items-center md:text-2xl text-lg text-white"
+          class="flex justify-center mx-auto md:flex-row flex-col gap-x-2 md:max-w-2xl max-w-lg py-3 rounded my-2 ring-1 ring-pink-600 items-center md:text-2xl text-lg dark:text-white text-black"
         >
-          <Icon name="ic:baseline-edit-note" class="w-10 h-10 text-red-100" />
+          <Icon
+            name="ic:baseline-edit-note"
+            class="w-10 h-10 dark:text-white text-black"
+          />
           <p class="text-sm md:text-xl">{{ err }}</p>
         </div>
       </div>
