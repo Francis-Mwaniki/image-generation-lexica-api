@@ -11,6 +11,12 @@
 # Download history
 
 <img src="./assets/css/img/history.png" />
+
+### clone this repo
+
+```sh
+  https://github.com/Francis-Mwaniki/image-generation-lexica-api
+  ```
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
