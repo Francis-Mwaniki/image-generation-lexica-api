@@ -1,7 +1,12 @@
 
-# Preview
+# Preview Dark
 
 <img src="./assets/css/img/myscreen.png" />
+
+# Preview Light
+
+<img src="./assets/css/img/light.png" />
+
 
 # Download history
 
