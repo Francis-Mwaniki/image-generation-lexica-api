@@ -15,7 +15,7 @@
 ### clone this repo
 
 ```sh
-  https://github.com/Francis-Mwaniki/image-generation-lexica-api
+  git clone https://github.com/Francis-Mwaniki/image-generation-lexica-api
   ```
 # Nuxt 3 Minimal Starter
 
