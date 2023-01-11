@@ -1,20 +1,22 @@
 <template>
   <div>
-    <div class="dark:bg-slate-900 bg-pink-300 flex justify-start items-center p-2">
+    <div
+      class="dark:bg-slate-900 bg-pink-300 flex justify-center mx-auto items-center p-2 gap-x-2"
+    >
       <ToggleMode />
-      <Nuxt-Link to="/" class="text-white flex justify-end items-end gap-x-1">
-        <span
-          class="px-4 py-2 ring ring-pink-300 rounded bg-pink-800 dark:bg-transparent m-3"
-        >
-          <Icon name="ic:baseline-home" class="w-7 h-7 text-gray-200" /> Home</span
-        ></Nuxt-Link
+      <Nuxt-Link
+        to="/"
+        class="text-white flex h-9 justify-center flex-row items-center gap-x-1 ring ring-pink-300 rounded bg-pink-800 dark:bg-transparent"
       >
-      <Nuxt-Link to="/history" class="text-white flex justify-end items-end gap-x-1">
-        <span
-          class="px-4 py-2 ring ring-pink-300 rounded bg-pink-800 dark:bg-transparent m-3"
-          ><Icon name="ic:baseline-history" class="w-7 h-7 text-gray-200" />Download
-          History</span
-        ></Nuxt-Link
+        <Icon name="ic:baseline-home" class="w-6 h-6 text-gray-200" />
+        <span class="md:text-xl text-sm"> Home</span></Nuxt-Link
+      >
+      <Nuxt-Link
+        to="/history"
+        class="text-white px-1 h-9 flex justify-center items-center gap-x-1 flex-row ring ring-pink-300 rounded bg-pink-800 dark:bg-transparent"
+      >
+        <Icon name="ic:baseline-history" class="w-6 h-6 text-gray-200" />
+        <span class="md:text-xl text-sm">Downloads </span></Nuxt-Link
       >
     </div>
     <NuxtPage />
