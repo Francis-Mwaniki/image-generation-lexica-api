@@ -8,6 +8,7 @@
       <div
         class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"
       ></div>
+
       <p
         class="sm:w-1/3 w-2/3 text-center dark:text-pink-300 text-indigo-100"
         v-show="errMsg"
@@ -52,6 +53,19 @@
         </div>
 
         <!-- image search box -->
+        <div
+          class="flex justify-around gap-x-4 items-center dark:text-black rounded text-black flex-row mx-auto max-w-lg dark:bg-pink-300 py-2 bg-pink-800 px-2 my-2"
+          v-show="status"
+        >
+          <p class="text-lg leading-relaxed text-center" v-show="success">
+            {{ success }}
+          </p>
+          <Icon
+            @click="status = false"
+            class="text-white p-1 cursor-pointer h-7 w-7 rounded-full bg-pink-700"
+            name="ic:baseline-close"
+          />
+        </div>
         <div class="box pt-6">
           <div class="box-wrapper">
             <div
@@ -97,7 +111,7 @@
           </div>
         </div>
         <div
-          class="flex justify-center mx-auto py-3 items-center text-2xl dark:text-white text-black px-1"
+          class="flex justify-center mx-auto py-3 items-center md:text-2xl text-sm dark:text-white text-black px-1"
         >
           Your search is "{{ query }}"
         </div>
@@ -136,8 +150,10 @@ import axios from "axios";
 let query = ref("");
 let allPosts = ref([]);
 let loading = ref(false);
+let success = ref("");
+
 let downloading = ref(false);
-let all_imgs = ref([]);
+let status = ref(false);
 let err = ref("Give atleast a gap of 2 minutes per search");
 let errMsg = ref("");
 const client = useSupabaseClient();
@@ -150,7 +166,10 @@ const client = useSupabaseClient();
 const getImg = async () => {
   setTimeout(async () => {
     loading.value = true;
-    let data = await fetch(`https://lexica.art/api/v1/search?q=${query.value}`);
+    const config = {
+      method: "GET",
+    };
+    let data = await fetch(`https://lexica.art/api/v1/search?q=${query.value}`, config);
     if (data.ok) {
       let res = await data.json();
       allPosts.value.push(res.images);
@@ -163,8 +182,9 @@ const getImg = async () => {
 
       console.log(allPosts);
     } else {
-      let res = await data.json();
-      errMsg.value = res.message;
+      // let res = await data.json();
+      alert("error");
+      //  errMsg.value = res.message;
       setTimeout(() => {
         loading.value = false;
       }, 3000);
@@ -188,6 +208,8 @@ const downloadImage = async (src) => {
     }, 5000);
   });
   setTimeout(() => {
+    status.value = true;
+    success.value = "Image downloaded";
     downloading.value = false;
   }, 2000);
 
