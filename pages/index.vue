@@ -169,7 +169,7 @@ const getImg = async () => {
         loading.value = false;
       }, 3000);
     }
-  }, 8000);
+  }, 500);
 };
 const downloadImage = async (src) => {
   downloading.value = true;
