@@ -25,7 +25,7 @@
       <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
         <div class="flex flex-wrap text-center justify-center">
           <div class="w-full lg:w-6/12 px-4 py-2">
-            <h2 class="text-4xl font-semibold">Your download history</h2>
+            <h2 class="text-4xl font-semibold">Your download history...</h2>
             <p class="text-lg leading-relaxed mt-4 mb-4">All downloads appears here</p>
           </div>
         </div>
