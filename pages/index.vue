@@ -37,11 +37,28 @@
       <div class="hero">
         <!-- hero headline -->
         <div
-          class="hero-headline flex flex-col items-center justify-center pt-24 text-center gap-y-2"
+          class="hero-headline flex flex-col items-center justify-center pt-6 text-center gap-y-2"
         >
           <h1 class="font-bold text-3xl dark:text-white text-black">
             Stunning free images & royalty free stock
           </h1>
+          <h2
+            class="font-bold text-3xl dark:text-white text-black border-pink-600 border-b-2"
+          >
+            Example
+          </h2>
+          <div
+            class="card max-w-md flex justify-center flex-col items-center mx-auto rounded-md h-80 ring-1 dark:ring-pink-600 ring-pink-600 p-1"
+          >
+            <nuxt-img
+              fit="cover"
+              class="max-w-md h-64"
+              src="https://lexica-serve-encoded-images.sharif.workers.dev/md/286b3b98-8a8a-4b84-ba2e-164c6b11d53d"
+            />
+            <h3 class="text-center dark:text-white text-black">
+              LION SITTING IN A CHAIR PLAYING GUITAR 8K QUALITY
+            </h3>
+          </div>
           <div
             class="font-base text-base text-gray-300 ring-1 ring-pink-700 p-2 flex justify-center items-center mx-auto md:flex-row flex-col"
           >
