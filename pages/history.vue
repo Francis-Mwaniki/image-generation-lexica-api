@@ -31,7 +31,9 @@
             :key="img"
           >
             <nuxt-img fit="cover" class="w-full h-64 object-cover" :src="img.img_url" />
-            <h3 class="text-center dark:text-white text-black">{{ img.name }}</h3>
+            <h3 class="text-center dark:text-white text-black">
+              {{ img.name.slice(0, 30) }}...
+            </h3>
 
             <button
               @click="deleteImg(img.id)"
