@@ -56,7 +56,7 @@
               src="https://lexica-serve-encoded-images.sharif.workers.dev/md/286b3b98-8a8a-4b84-ba2e-164c6b11d53d"
             />
             <h3 class="text-center dark:text-white text-black">
-              LION SITTING IN A CHAIR PLAYING GUITAR 8K QUALITY
+              LION SITTING IN A CHAIR PLAYING PIANO 8K QUALITY
             </h3>
           </div>
           <div
