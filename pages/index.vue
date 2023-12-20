@@ -190,6 +190,7 @@ const getImg = async () => {
     if (data.ok) {
       let res = await data.json();
       allPosts.value.push(res.images);
+      console.log("posts",allPosts.value )
       setTimeout(() => {
         loading.value = false;
       }, 8000);
