@@ -1,5 +1,7 @@
 {
+  "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -8,13 +10,19 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
-    "@nuxtjs/supabase": "^0.3.0",
-    "@nuxtjs/tailwindcss": "^6.2.0",
-    "nuxt": "3.0.0",
-    "nuxt-icon": "^0.1.8"
+    "@headlessui/vue": "1.7.16",
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "3.3.0",
+    "@nuxtjs/tailwindcss": "^6.10.1",
+    "@vueuse/core": "10.5.0",
+    "nuxt": "^3.8.2",
+    "nuxt-icon": "0.5.0",
+    "vue": "^3.3.12",
+    "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "axios": "^1.2.2"
+    "@nuxt/image": "1.0.0-rc.3",
+    "@nuxt/ui": "^2.11.1",
+    "axios": "^1.6.2"
   }
 }

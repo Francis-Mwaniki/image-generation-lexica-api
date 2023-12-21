@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+:target {
+	scroll-margin-top: 4rem;
+}
+
+
+
+::selection {
+	@apply bg-primary text-white;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+
+/* global.css */
+
+/* Customizing scrollbar styles */
+/* For WebKit-based browsers */
+::-webkit-scrollbar {
+	width: 8px; /* Set the width of the scrollbar */
+  }
+  
+
+  
+  
+  .smooth {
+	transition: all 0.3s ease-in-out;
+	scale: 1.03;
+	animation: fadeIn 0.4s ease-in-out;
+	
+	
+	 
+  }
+  
+  .smooth:hover {
+	scale: 1.05;
+  }
+  
+  .smooth:focus {
+	scale: 1.05;
+  }
+  
+  @keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+   50% {
+	  opacity: 0.5;
+	  transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	  }
+  }
